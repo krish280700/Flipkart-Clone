@@ -1,0 +1,155 @@
+@import './mixins/breakpoints';
+@import './abstracts/input';
+
+.user-view-grid{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	position: relative;
+	margin: 0 100px;
+	top: 65px;
+
+	.side-bar-wrapper{
+		width: 100%;
+		background: #fff;
+		position: relative;
+		border: 1px solid #dfe1e4;
+		overflow-y: auto;
+		top: 0px;    	
+		font-size: 12px;
+
+		-ms-overflow-style: none; /* for Internet Explorer, Edge */
+		scrollbar-width: none; /* for Firefox */
+		
+		@include media-min-lg-x{
+			max-width: 450px;
+			height: 500px;
+		}
+
+		.nav-tabs{
+			display: flex;
+			align-items: center;
+			overflow: auto;
+
+			
+			@include media-min-lg-x{
+				display: block;
+			}
+
+			li{
+				margin: 0 !important;
+				border: 0 !important;
+				background: #fff;
+
+				&.active{
+					.stroke {
+                        path {
+                            stroke: #2f80ed !important;
+                            fill-opacity: 1 !important;
+                            fill: unset !important;
+                        }
+                    }
+                    path {
+                        fill: #2f80ed;
+                        fill-opacity: 1 !important;
+                    }
+                    .sub-text {
+                        color: #2f80ed !important;
+                    }
+				}
+
+				@include media-min-lg-x{
+					width: 100% !important;
+				}
+			}
+			
+			.side-nav-items{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100px;
+				background-color: unset !important;
+				text-align: center;
+				padding: 10px 0 !important;
+
+				@include media-min-lg-x{
+					width: unset;
+				}
+			}
+
+			.activity-pos{
+				position: relative;
+				@include media-min-lg-x{
+					position: absolute;
+					bottom: 60px;
+				}
+			}
+
+			.setting-pos{
+				position: relative;
+				bottom: 0;
+				@include media-min-lg-x{
+					position: absolute;
+				}
+			}
+
+		}
+
+		&::-webkit-scrollbar {
+			display: none; /* for Chrome, Safari, and Opera */
+		}
+	}
+
+	.tab-section-wrapper{
+		width: 100%;
+		margin-top: 10px;
+		position: relative;
+		font-size: 14px;
+
+		@include media-min-lg-x{
+			width: calc(65% - 30px);
+		}
+
+		.tab-section-nav{
+			display: flex;
+			background-color: #fff;
+			border: 1px solid #dfe1e4;
+			overflow-x: auto;
+			color: #808a98;
+
+			.active{
+				border-bottom: 3px solid #3c2d89;
+				color: #3c2d89;
+				transition: 1s border;
+			}
+
+			.tab-section-nav-item{
+				padding: 12px 15px;
+				white-space: nowrap;
+			}
+
+			&::-webkit-scrollbar {
+				display: none; /* for Chrome, Safari, and Opera */
+			}
+		}
+	}
+
+	.right-section-wrapper{
+		font-size: 14px;
+		width: 25%;
+	}
+}
+
+.header-search-container{
+	display: flex;
+	justify-content: flex-start;
+    height: 100%;
+    min-width: 304px;
+    width: calc(100% - 540px);
+    margin: 0 auto 0 12px;
+}
+
+.footer-container{
+	position: relative;
+	padding: 30px 110px;	
+}
